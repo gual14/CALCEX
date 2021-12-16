@@ -4,7 +4,8 @@ int main(int argc, char const *argv[])
 {
     double input1, input2, result;
     char oprator, qmark;
-    do
+    cout<<"HELLO";
+    while (oprator != 'e');
     {
         if (qmark == '?')
         {
@@ -53,11 +54,11 @@ int main(int argc, char const *argv[])
             default:
                 break;
             }
-            cout<<"    >>>"<<result;
+            cout<<">>>"<<result;
         }
         
-    } while (oprator == 'e');
+    } 
     
-    
+    cout<<"GOODBAY";
     return 0;
 }
