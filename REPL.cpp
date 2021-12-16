@@ -96,18 +96,17 @@ bool compare(){
     return compres;
 }
 bool logate(){
-    bool input1, input2;
-    cin>> opr >> input1 >> input2 >> qmark;
+    cin>> opr >> oprand1 >> oprand2 >> qmark;
     if (qmark == '?'){
         switch (opr)
         {
         case 'A':
-            compres = input1 && input2;
+            compres = oprand1 && oprand2;
             break;
         case 'O':
-            compres = input1 || input2;
+            compres = oprand1 || oprand2;
         case 'N':
-            compres = !input1;
+            compres = !oprand1;
         default:
             break;
         }
