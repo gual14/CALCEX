@@ -10,12 +10,13 @@ int n1, n2, ans;
 string s1;
 char qmark;
 enum raop {
-	ADD, SUB, MUL, DIV, PWR, MOD,/*MODULE*/ SQRT, FLR, /*FLOOR*/AND, OR, NOT, NAND, NOR, XOR, BIG, SML, EQL, BOE, /*BIG OR EQUEAL*/SOE, /*SMALL OR EQUEAL*/DIF, STR, PSH, MOV, CLR, END
+	START, ADD, SUB, MUL, DIV, PWR, MOD,/*MODULE*/ SQRT, FLR, /*FLOOR*/AND, OR, NOT, NAND, NOR, XOR, BIG, SML, EQL, BOE, /*BIG OR EQUEAL*/SOE, /*SMALL OR EQUEAL*/DIF, STR, PSH, MOV, CLR, END
 };
 
 raop opr;
 void getid(){
-    if (o =="ADD"){opr = ADD;}
+    if(o == "START") {opr = START;}
+    else if (o =="ADD"){opr = ADD;}
     else if (o=="SUB"){opr = SUB;}
     else if (o=="MUL"){opr = MUL;}
     else if (o=="DIV"){opr = DIV;}
@@ -76,6 +77,42 @@ int main() {
                     break;
                 case FLR:
                     ans = floor(n1);
+                    break;
+                case AND:
+                    ans = n1 && n2;
+                    break;
+                case OR:
+                    ans = n1 || n2;
+                    break;
+                case  NOT:
+                    ans = !n1;
+                    break;
+                case NAND:
+                    ans = !(n1 && n2);
+                    break;
+                case NOR:
+                    ans = !(n1 || n2);
+                    break;
+                case XOR:
+                    ans = n1 != n2;
+                    break;
+                case BIG:
+                    ans = n1 > n2;
+                    break;
+                case SML:
+                    ans = n1 < n2;
+                    break;
+                case EQL:
+                    ans = n1 == n2;
+                    break;
+                case BOE:
+                    ans = n1 >= n2;
+                    break;
+                case SOE:
+                    ans = n1 <= n2;
+                    break;
+                case DIF:
+                    ans = n1 != n2;
                     break;
                 case STR:
                     svars.insert({s1, n2});
